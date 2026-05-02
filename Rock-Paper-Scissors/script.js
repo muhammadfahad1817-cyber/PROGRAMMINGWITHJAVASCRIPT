@@ -34,6 +34,7 @@ function playgame (userChoice){
             } else{
                  userWin = computerChoice == "paper" ? true : false
             }
+            showWinner(userWin)
             
         }
     }
@@ -48,4 +49,12 @@ function genCompChoice(){
 
 function draw(){
      console.log("draw")
+}
+
+function showWinner(userWin){
+    if(userWin == true){
+        console.log("You win")
+    } else{
+        console.log("You lose")
+    }
 }
