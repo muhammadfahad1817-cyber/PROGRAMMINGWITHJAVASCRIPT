@@ -17,4 +17,35 @@ for(let choice of choices){
 
 function playgame (userChoice){
    console.log(`user clicked: ${userChoice}`)
+    const computerChoice = genCompChoice() // rock, paper, scissor -> random
+    console.log(`Computer Chose: ${computerChoice}`)
+    if(userChoice == computerChoice){
+       draw()
+    } else{
+        // console.log("Should be a win or lose")
+        let userWin = true
+
+        //user choice rock , system have paper or scissor
+        if(userChoice == "rock"){
+           
+            userWin = computerChoice == "scissor" ? true : false 
+            } else if(userChoice == "paper"){
+                userWin = computerChoice == "rock" ? true : false
+            } else{
+                 userWin = computerChoice == "paper" ? true : false
+            }
+            
+        }
+    }
+
+
+
+function genCompChoice(){
+    const options = ['rock', 'paper', 'scissor']
+     const randomIndex = Math.floor(Math.random()*3) //0,1,2
+     return options[randomIndex]
+}
+
+function draw(){
+     console.log("draw")
 }
