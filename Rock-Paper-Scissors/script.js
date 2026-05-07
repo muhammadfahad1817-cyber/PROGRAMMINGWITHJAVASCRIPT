@@ -4,6 +4,9 @@ let computerScore = 0
 
 // user choice get 
  const choices = document.getElementsByClassName('choice')
+ const msgContainer = document.getElementById('msg')
+ const userScorePara = document.getElementById('user-score')
+ const compScorePara = document.getElementById('computer-score')
 //  console.log(choices)
 
 for(let choice of choices){
@@ -16,9 +19,9 @@ for(let choice of choices){
 }
 
 function playgame (userChoice){
-   console.log(`user clicked: ${userChoice}`)
+//    console.log(`user clicked: ${userChoice}`)
     const computerChoice = genCompChoice() // rock, paper, scissor -> random
-    console.log(`Computer Chose: ${computerChoice}`)
+    // console.log(`Computer Chose: ${computerChoice}`)
     if(userChoice == computerChoice){
        draw()
     } else{
@@ -34,7 +37,7 @@ function playgame (userChoice){
             } else{
                  userWin = computerChoice == "paper" ? true : false
             }
-            showWinner(userWin)
+            showWinner(userWin, computerChoice, userChoice )
             
         }
     }
@@ -48,13 +51,24 @@ function genCompChoice(){
 }
 
 function draw(){
-     console.log("draw")
+    //  console.log("draw")
+    msgContainer.innerText = "Draw, Play Again!"
+    msgContainer.style.backgroundColor = 'rgb(5, 5, 36)'
 }
 
-function showWinner(userWin){
+function showWinner(userWin, computerChoice, userChoice){
     if(userWin == true){
-        console.log("You win")
+        userScore++
+        userScorePara.innerText = userScore
+        // console.log(`You Win: Computer Chose ${computerChoice} | User Chose ${userChoice}`)
+        msgContainer.innerText = `You Win: Computer Chose ${computerChoice} | User Chose ${userChoice}`
+        msgContainer.style.backgroundColor = 'green'
     } else{
-        console.log("You lose")
+        computerScore++
+          compScorePara.innerText = computerScore
+        // console.log(`You Lose: Computer Chose ${computerChoice} | User Chose ${userChoice}`)
+        msgContainer.innerText = `You Lose: Computer Chose ${computerChoice} | User Chose ${userChoice}`
+         msgContainer.style.backgroundColor = 'red'
+
     }
 }
