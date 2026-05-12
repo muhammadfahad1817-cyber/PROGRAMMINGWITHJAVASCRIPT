@@ -1,0 +1,8 @@
+(async to sync)
+promise
+callback
+
+Three conditions of promise 
+1.pending 
+2.fulfill -> resolve 
+3.Not fulfill -> rejected
