@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Image classification with mobile net</h2>
+    <img src="persian.jfif" alt="!" id="img">
+    <div id="results"></div>
+   
+    <!-- Load TensorFlow.js. This is required to use MobileNet. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0"> </script>
+<!-- Load the MobileNet model. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"> </script>
+
+
+<script>
+    const img = document.getElementById("img")
+    const resultdiv = document.getElementById("results")
+
+    mobilenet.load()
+    .then(model => {
+        model.classify(img)
+
+        .then(predictions=>{
+            console.log(predictions)
+        })
+    })
+
+    
+</script>
+</body>
+</html>
