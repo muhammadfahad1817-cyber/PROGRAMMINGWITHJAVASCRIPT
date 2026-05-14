@@ -188,7 +188,7 @@
 let student = {
     name:"ALiyan",
     age:20,
-    garde: "A",
+    grade: "A",
    greet: function(){
     return `Hello, ${this.name}`
    }
