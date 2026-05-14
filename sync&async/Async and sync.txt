@@ -6,3 +6,11 @@ Three conditions of promise
 1.pending 
 2.fulfill -> resolve 
 3.Not fulfill -> rejected
+
+
+Async:-
+     Parallel Execution of code
+
+
+Sync:-
+     Line by line execution
